@@ -139,3 +139,7 @@ def menu_principal():
             print("Gracias por usar el aplicativo. ¡Hasta luego!")
             break
 
+
+# Ejecutar el programa
+if __name__ == "__main__":
+    menu_principal()

@@ -1,5 +1,3 @@
-import bcrypt
-import os
 import json
 from Class_Usuarios import Usuario
 
@@ -87,15 +85,20 @@ class Funciones:
         else:
             print("Acceso denegado.")
 
-    #Metodo para ordenar en forma ascedente los usuarios si es administrador
     def ordenar_usuarios(self, usuario_actual, descendente=False):
         if "admin" in usuario_actual.roles:
+
             self._usuarios.sort(
                 key=lambda usuario: (usuario.apellido, usuario.nombre),
                 reverse=descendente,
             )
+            
+            print("\nUsuarios ordenados:\n")
+            for usuario in self._usuarios:
+                print(f"Nombre: {usuario.nombre}, Apellido: {usuario.apellido}")
         else:
             print("Acceso denegado.")
+
 
 
 
